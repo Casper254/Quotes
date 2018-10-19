@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  quotes: string[];
+  
   title = 'Quotes';
+
+  constructor(){
+    
+    this.quotes = ['"I had a dream"','"age aint nothing but a number"']
+
+  }
+  
+
 }
