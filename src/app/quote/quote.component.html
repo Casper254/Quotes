@@ -1,0 +1,22 @@
+<h1>My Quotes</h1>
+<hr>
+
+<h3>Upload Quote</h3>
+<div class="container">
+    <div class="row">
+        <app-quote-form (addGoal)="addNewGoal($event)"></app-quote-form>
+    </div>
+</div>
+<div *ngFor='let quote of quotes;let i = index'>
+  <div class="row">
+    <div class="card col-3">
+      <p id="{{i}}" appStrikethrough>{{quote.name}} uploaded {{quote.completeDate|date|uppercase}}</p>
+      <button (click)='toggleDetails(i)'>Show/Hide Quote</button>
+  
+    </div>
+  
+  </div>
+  
+  <app-quote-details *ngIf="quote.showDescription" [quote]='quote' (isComplete)= 'completeGoal($event,i)'></app-quote-details>
+
+</div>

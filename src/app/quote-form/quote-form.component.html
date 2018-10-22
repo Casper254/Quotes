@@ -1,0 +1,25 @@
+<div class="container-fluid">
+    <div class="row">
+        <form (ngSubmit)='submitGoal()' #quoteForm='ngForm'>
+            <div class="form-group">
+
+                <label for="name">Name</label>
+                <input type="text" required class="form-control" id="name" [(ngModel)]="newGoal.name" name="name">
+                Display {{new.name}}
+
+            </div>
+            <div class="form-group">
+
+                <label for="description">Quote</label>
+                <textarea class="form-control" id="description" rows="2" required></textarea>
+                
+            </div>
+            <div class="form-group">
+                <label for="complete">Date Uploaded</label>
+                <input type='date' id="complete" required>
+                
+            </div>
+            <button type="submit">Add Quote</button>
+        </form>
+    </div>
+</div>
